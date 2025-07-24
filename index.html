@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Algorithm Visualizer</title>
+</head>
+
+<body>
+    <div id="toolbar">
+        <div id="icon-section">
+            <div id="generateArray" class="toolbar-item" onclick="location.reload()" title="Reload Or Stop Simulation">
+                <img alt="Algorithm icon" class="toolbar-icon" src="assets/algorithm.png" />
+                <span> ALGORITHM VISUALIZER</span>
+            </div>
+        </div>
+        <div id="array-size-section">
+            <div id="arraySize" class="toolbar-item">Change Array Size and Speed</div>
+            <input type="range" min="10" max="500" id="changeSize" value="30" class="toolbar-item-range">
+        </div>
+        <div id="sort-list">
+            <div class="algorithmButton" onclick="bubbleSort(10);">Bubble</div>
+            <div class="algorithmButton" onclick="selectionSort(10);">Selection</div>
+            <div class="algorithmButton" onclick="quickSort(10);">Quick</div>
+            <div class="algorithmButton" onclick="insertionSort(10);">Insertion</div>
+            <div class="algorithmButton" onclick="cocktailSort(10);">Cocktail</div>
+        </div>
+        <div id="search-list">
+            <div class="algorithmButton" onclick="linearSearch(searchInputValue)">Linear Search</div>
+            <div class="algorithmButton" onclick="binarySearch(searchInputValue)">Binary Search</div>
+        </div>
+    </div>
+    <section class="search-section">
+        <form>
+            <div>
+                <label for="search">Searching For:</label>
+                <input type="number" id="search" name="search" placeholder="Enter a number...">
+            </div>
+            <div>
+                <div id="sortSpeed">Sorting Speed</div>
+                <input type="range" min="1" max="10" id="changeSpeed" value="10" class="searchSection-range">
+            </div>
+            <div>
+                <input type="button" id="genBlocks" title="To start afresh" onclick="generateBlockUtil()"
+                    value="Randomize Array">
+            </div>
+        </form>
+    </section>
+    <section id="warning"></section>
+    <section id="data-container"></section>
+    <section id="result" class="resultStyle"></section>
+
+    <script src="src/utilityFunctions.js"></script>
+    <script src="src/quicksort.js"></script>
+    <script src="src/cocktailsort.js"></script>
+    <script src="src/insertionsort.js"></script>
+    <script src="src/sliderEvent.js"></script>
+    <script src="src/bubblesort.js"></script>
+    <script src="src/selectionsort.js"></script>
+    <script src="src/searching.js"></script>
+</body>
+
+</html>
